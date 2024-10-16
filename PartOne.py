@@ -6,3 +6,6 @@ def main(name):
                     else i for i in name]).lstrip('_')
 name = input("What's your full name?")
 print(name)
+
+# using isupper() checks if input has upper cases 
+# lstrip() removes whitespaces
