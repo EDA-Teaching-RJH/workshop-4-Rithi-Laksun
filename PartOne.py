@@ -4,7 +4,7 @@
 def main(name):
     fullname = [name[0].lower()]
     for a in name[1:]:
-        if a in ('ABCDEFGHIJKLMNOPQRSTUVWYZ') or a in (' '):
+        if a in ('ABCDEFGHIJKLMNOPQRSTUVWYZ') or a in (' '):    #a is the character
             fullname.append('_')  #puts underscore
             fullname.append(a.lower())  # lowers the cases
         else:
