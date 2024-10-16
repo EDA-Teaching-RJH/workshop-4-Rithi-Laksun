@@ -1,11 +1,14 @@
-# converting camel case input into snake case output
+
+#converting camel case input into snake case output
 
 def main(name):
-
-    return ''.join(['_'+i.lower() if i.isupper() 
-                    else i for i in name]).lstrip('_')
+    fullname = [name[0].lower()]
+    for a in name[1:]:
+        if a in ('ABCDEFGHIJKLMNOPQRSTUVWYZ') or a in (' '):
+            fullname.append('_')  #puts underscore
+            fullname.append(a.lower())  # lowers the cases
+        else:
+            fullname.append(a)
+    return ''.join(fullname)
 name = input("What's your full name?")
-print(name)
-
-# using isupper() checks if input has upper cases 
-# lstrip() removes whitespaces
+print(main(name))
