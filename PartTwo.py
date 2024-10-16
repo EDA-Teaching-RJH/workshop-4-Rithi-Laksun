@@ -1,5 +1,7 @@
 def main():
-  drinksmenu = ['Coffee', 'Latte', 'Iced tea']
+  drinksmenu = {'Coffee', 'Latte', 'Iced tea'}
+  changeset = {'50p', '20p', '10p', '5p'}
+  
 
   print("You can only pay with cash or 50p, 20p, 10p and 5p in this Coffee Machine")
 
@@ -24,8 +26,8 @@ def main():
   print("It's £", cost, "please pay by cash or coins")
   change = input("How much would you like to give: ")
 
-  if change == "50p" or change == "20p" or change == "10p" or change == "5p":
-      change1 = int(change.replace("p", ""))
+  if change in changeset:
+      change1 = float(change.replace("p", ""))
       give = cost - (change1 / 100)
       if change1 >= 0.75 and change1 < 0.75:
         print("Cost left to pay:", give)
@@ -43,7 +45,7 @@ def main():
   else:
       while give > 0:
         x = input("Sorry that wasn't enough. How much more would you like to give: ")
-        if x == "50p" or x == "20p" or x == "10p" or x == "5p":
+        if x in changeset:
           x1 = int(x.replace("p", ""))
           give = give - (x1 / 100)
           print("Cost left to pay:", give)
